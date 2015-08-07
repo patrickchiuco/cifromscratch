@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html lang="en">
-  <header>
+  <head>
     <title>CodeIgniter from Scratch Tutorials</title>
     <meta charset="utf-8">
-  </header>
+  </head>
   <body>

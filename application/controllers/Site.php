@@ -26,7 +26,9 @@
     function show_data(){
       $this->load->model('data_model');
       $data['values'] = $this->data_model->getAll();
+      $this->load->view('common_views/header');
       $this->load->view('view_data',$data);
+      $this->load->view('common_views/footer');
     }
   }
 ?>
