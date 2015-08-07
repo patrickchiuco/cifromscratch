@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost:8888/cifromscratch';
-
+$config['server_root'] = $_SERVER['DOCUMENT_ROOT'].'/cifromscratch';
 /*
 |--------------------------------------------------------------------------
 | Index File
