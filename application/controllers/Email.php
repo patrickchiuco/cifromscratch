@@ -54,9 +54,8 @@
         if($this->email->send())
         {
           $data['message'] = $name.", your email was sent.";
-          $this->load->view('common_views/header');
-          $this->load->view('email_views/email_success',$data);
-          $this->load->view('common_views/footer');
+          $data['main_content'] = "email_views/email_success";
+          $this->load->view('common_views/base',$data);
         }else{
           show_error($this->email->print_debugger());
         }

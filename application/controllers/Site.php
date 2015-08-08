@@ -6,6 +6,7 @@
       parent::__construct();
       $this->load->helper('form');
       $this->load->model('data_model');
+      $this->is_logged_in();
     }
 
     function index()
@@ -90,5 +91,19 @@
           $this->load->view('crud_views/show_options');
     }
 
+    function members_area()
+    {
+      $this->load->view('login_views/members_area');
+    }
+
+    function is_logged_in()
+    {
+      $is_logged_in = $this->session->userdata('is_logged_in');
+      if(!isset($is_logged_in) || !$is_logged_in)
+      {
+        $data['error'] = "Members only area";
+        $this->load->view('errors/members/permission_denied');
+      }
+    }
 
   }
