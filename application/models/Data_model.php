@@ -2,7 +2,7 @@
   class Data_model extends CI_Model
   {
 
-    function getAll()
+    function get_id_last_name()
     {
       /*
         Using the query function to fetch the database
@@ -47,24 +47,33 @@
       return $results;
     }
 
-    function add_record()
+    function get_records()
+    {
+      $query = $this->db->get('data');
+      $rows_array = array();
+      foreach($query->result() as $row)
+      {
+        array_push($rows_array,$row);
+      }
+      return $rows_array;
+    }
+
+    function add_record($data)
     {
       $this->db->insert('data',$data);
-      return
     }
 
-    function update_record($data)
+    function update_record($id,$data)
     {
-      $this->db->where('id',14);
-      $this->db->update("comment",$data)
-
+      $this->db->where('id',$id);
+      $this->db->update('data',$data);
     }
 
-    function delete_row($id)
+    function delete_row()
     {
       $this->db->where('id',$this->uri->segment(3));
-      $this->db->delete('comment');
-
+      $this->db->delete('data');
     }
+
   }
 ?>
