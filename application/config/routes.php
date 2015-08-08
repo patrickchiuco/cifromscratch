@@ -57,3 +57,4 @@ $route['site'] = 'site';
 $route['site/new_method'] = 'site/new_method';
 $route['site/private'] = 'site/_private_method';
 $route['show_data'] = 'site/show_data';
+$route['newsletter'] = 'email/';

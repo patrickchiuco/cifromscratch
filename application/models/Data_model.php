@@ -47,10 +47,24 @@
       return $results;
     }
 
-    /*function getAll()
+    function add_record()
     {
-      $q = $this->db->get('data',1,1);
+      $this->db->insert('data',$data);
+      return
+    }
 
-    }*/
+    function update_record($data)
+    {
+      $this->db->where('id',14);
+      $this->db->update("comment",$data)
+
+    }
+
+    function delete_row($id)
+    {
+      $this->db->where('id',$this->uri->segment(3));
+      $this->db->delete('comment');
+
+    }
   }
 ?>

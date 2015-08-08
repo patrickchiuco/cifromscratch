@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost:8888/cifromscratch';
-$config['server_root'] = $_SERVER['DOCUMENT_ROOT'].'/cifromscratch';
+
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -498,3 +498,11 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+/*
+  Custom configuration
+*/
+
+$config['server_root'] = $_SERVER['DOCUMENT_ROOT'].'/cifromscratch';
+$config['static_files'] = $config['server_root'].'/static';

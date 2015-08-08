@@ -1,15 +1,19 @@
 <?php
-  class Site extends CI_Controller{
-    function __construct(){
+  class Site extends CI_Controller
+  {
+    function __construct()
+    {
       parent::__construct();
 
     }
 
-    function index(){
-      echo "Hello world";
+    function index()
+    {
+      $this->load->view('crud_views/show_options');
     }
 
-    function new_method(){
+    function new_method()
+    {
       $this->load->model('site_model');
       $data["output"] = $this->site_model->getAll();
       $this->load->view('common_views/header');
@@ -18,12 +22,14 @@
 
     }
 
-    function _private_method(){
+    function _private_method()
+    {
       echo "I\'m a private method";
 
     }
 
-    function show_data(){
+    function show_data()
+    {
       $this->load->model('data_model');
       $data['values'] = $this->data_model->getAll();
       $this->load->view('common_views/header');
@@ -31,4 +37,3 @@
       $this->load->view('common_views/footer');
     }
   }
-?>
